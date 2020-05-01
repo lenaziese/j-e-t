@@ -1,0 +1,257 @@
+/*
+ * This stylesheet contains some hacks to ensure correct display in
+ * Internet Explorer 6.
+ * The current IE version 7 does not need these hacks, so probably
+ * the stylesheet will not need to be edited for future versions.
+ */
+
+/* disabling CSS for Netscape 4 and IE5/Mac (too buggy) \*/
+* {
+  voice-family:"\"}\"";
+  voice-family:inherit;
+}
+
+* {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+img {
+  display:block;
+}
+
+body {
+  background-color:#009cc0;
+  background-image:url('white650.png');
+  background-position:center top;
+  background-repeat:repeat-y;
+  text-align:center; /* center for IE \*/
+  font-family:Verdana,sans-serif;
+  font-size:11px;
+  color:#000000;
+  line-height:1.3em;
+}
+
+div#main {
+  width:610px;
+  margin:0 auto 0 auto;
+  padding:0 25px 25px 15px;
+  text-align:left;
+  overflow:hidden;
+}
+
+/* width for IE \*/
+* html div#main {
+  width:650px;
+}
+
+div#header {
+  position:relative;
+  height:52px;
+  margin-bottom:33px;
+}
+
+h1 {
+  position:absolute;
+  left:0;
+  bottom:0;
+  font-size:1em;
+}
+
+h2 {
+  display:none;
+}
+
+h3 {
+  font-size:1em;
+  font-weight:bold;
+  margin-bottom:1.3em;
+}
+
+h4 {
+  font-size:1em;
+  font-weight:normal;
+}
+
+div#header ul {
+  list-style-type:none;
+  position:absolute;
+  left:85px;
+  bottom:0;
+  width:560px;
+  overflow:hidden;
+}
+
+ul strong {
+  font-weight:normal;
+}
+
+div#header li {
+  float:left;
+  margin-right:35px;
+}
+
+div#header li.active a {
+  color:#000000;
+}
+
+a {
+  color:#009cc0;
+  text-decoration:none;
+}
+
+a:hover {
+  color:#ff8040;
+}
+
+.inactive {
+  text-decoration:line-through;
+}
+
+div#content {
+  /* It could all be so much easier if IE understood floating elements with negative margins... \*/
+}
+
+div#content * {
+  margin-left:85px;
+  margin-right:230px;
+}
+
+div#content * * {
+  margin-left:0;
+  margin-right:0;
+}
+
+/* prevents IE 3px bug \*/
+* html div#content * {
+  height:1%;
+}
+
+* html div#content * * {
+  height:auto;
+}
+
+/* IE doesn't like things floating around imgs \*/
+* html div#content img {
+  margin-right:-100%;
+}
+
+div#content div.clear {
+  height:1px;
+  clear:right;
+}
+
+div#content div.right, div#content div.imagelist {
+  width:210px;
+  float:right;
+  margin:0;
+}
+
+div#content img {
+  margin-bottom:5px;
+}
+
+div#content div.img {
+  margin-bottom:20px;
+}
+
+div#content div.imagelist p {
+  font-size:0.82em;
+  line-height:1.3em;
+}
+
+div#content thead {
+  display:none;
+}
+
+div#content th, div#content td {
+  font-size:1em;
+  font-weight:normal;
+  text-align:left;
+  padding-top:0.55em;
+  vertical-align:top;
+}
+
+/* IE forgets about font sizes in tables \*/
+* html div#content th, * html div#content td {
+  font-size:11px;
+}
+
+div#content table.narrow th.def, div#content table.narrow td.def {
+  width:85px;
+  padding-right:5px;
+}
+
+/* width for IE \*/
+* html div#content table.narrow th.def, * html div#content table.narrow td.def {
+  width:90px;
+}
+
+div#content table.wide th.def, div#content table.wide td.def {
+  width:110px;
+  padding-right:5px;
+}
+
+/* width for IE \*/
+* html div#content table.wide th.def, * html div#content table.wide td.def {
+  width:115px;
+}
+
+div#content div.gallery_control {
+  font-size:0.82em;
+  padding-top:6px;
+  margin-top:15px;
+  margin-bottom:25px;
+  border-color:#009cc0;
+  border-style:solid;
+  border-width:1px 0 0 0;
+  overflow:hidden;
+}
+
+div#content div.gallery_control a.back {
+  color:#999999;
+  display:block;
+  float:left;
+}
+
+div#content div.gallery_control a.previous, div#content div.gallery_control a.next {
+  color:#ffffff;
+  padding:0 10px 0 10px;
+  background-position:right center;
+  background-repeat:no-repeat;
+  display:block;
+  float:right;
+}
+
+div#content div.gallery_control a.previous:hover, div#content div.gallery_control a.next:hover {
+  color:#009cc0;
+}
+
+div#content div.gallery_control a.previous {
+  background-image:url('gallery_prev.png');
+}
+
+div#content div.gallery_control a.next {
+  background-image:url('gallery_next.png');
+}
+
+div#content ul.submenu, div#content ul.wide, div#content ul.narrow {
+  list-style-type:none;
+}
+
+div#content ul.submenu {
+  float:left;
+  width:80px;
+  margin:0;
+}
+
+div#content ul.wide li, div#content ul.narrow {
+  margin-bottom:1.3em;
+}
+
+div#content ul.text {
+  list-style-type:square;
+  list-style-position:outside;
+  padding-left:1.3em;
+}
